@@ -7,7 +7,7 @@ part of '../../../../../../src/feature/authentication/presentation/controller/au
 // **************************************************************************
 
 String _$authenticationControllerHash() =>
-    r'ab4c5257dd518414124ef967cab244eeb1348842';
+    r'10cefb613bfc7bc4e40077b54167aebd0a3b4647';
 
 /// See also [AuthenticationController].
 @ProviderFor(AuthenticationController)

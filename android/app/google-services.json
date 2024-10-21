@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "55503061995",
+    "project_id": "flutter-devcamp-firebase-620ee",
+    "storage_bucket": "flutter-devcamp-firebase-620ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55503061995:android:d03017a0c5f8f96ea28fae",
+        "android_client_info": {
+          "package_name": "com.flutter.devcamp.firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHxUUG-ugwNfqiUnAyI_m0C3csKd9O18U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

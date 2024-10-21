@@ -16,4 +16,11 @@ class Validator {
     }
     return null;
   }
+
+  static String? username(String? value) {
+    if (value == null || value == '') {
+      return 'Username required.';
+    }
+    return null;
+  }
 }

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_devcamp_firebase/src/core/utils/validator.dart';
 
-class SignInEmailField extends StatelessWidget {
+class SignUpUsernameField extends StatelessWidget {
   final TextEditingController controller;
 
-  const SignInEmailField({
+  const SignUpUsernameField({
     super.key,
     required this.controller,
   });
@@ -13,10 +13,10 @@ class SignInEmailField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      validator: (value) => Validator.email(value),
+      validator: (value) => Validator.username(value),
       decoration: const InputDecoration(
         border: OutlineInputBorder(),
-        hintText: 'Email',
+        hintText: 'Username',
       ),
     );
   }

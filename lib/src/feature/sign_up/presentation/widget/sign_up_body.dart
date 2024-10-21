@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_devcamp_firebase/src/feature/sign_up/presentation/widget/sign_up_form.dart';
-import 'package:flutter_devcamp_firebase/src/feature/sign_up/presentation/widget/sign_up_title.dart';
+import 'package:flutter_devcamp_firebase/src/feature/sign_up/sign_up.dart';
 
 class SignUpBody extends StatelessWidget {
   const SignUpBody({super.key});
@@ -12,8 +11,6 @@ class SignUpBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: [
-        SignUpTitle(),
-        SizedBox(height: 24.0),
         SignUpForm(),
       ],
     );

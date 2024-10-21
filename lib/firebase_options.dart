@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: '',
-    appId: '',
-    messagingSenderId: '',
-    projectId: '',
-    storageBucket: '',
+    apiKey: 'AIzaSyCHxUUG-ugwNfqiUnAyI_m0C3csKd9O18U',
+    appId: '1:55503061995:android:d03017a0c5f8f96ea28fae',
+    messagingSenderId: '55503061995',
+    projectId: 'flutter-devcamp-firebase-620ee',
+    storageBucket: 'flutter-devcamp-firebase-620ee.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: '',
-    appId: '',
-    messagingSenderId: '',
-    projectId: '',
-    storageBucket: '',
-    iosBundleId: '',
+    apiKey: 'AIzaSyBweL2qsMEr5YEZTIw1ZlWsnYtYLkGiNwc',
+    appId: '1:55503061995:ios:da451de440adb9bca28fae',
+    messagingSenderId: '55503061995',
+    projectId: 'flutter-devcamp-firebase-620ee',
+    storageBucket: 'flutter-devcamp-firebase-620ee.appspot.com',
+    iosBundleId: 'com.flutter.devcamp.firebase.flutterDevcampFirebase',
   );
 }

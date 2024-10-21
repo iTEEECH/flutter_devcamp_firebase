@@ -7,9 +7,11 @@ class HomeWelcome extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final String? username = ref.watch(
-      currentUserProvider.select((user) => user?.email),
-    );
-    return Text('Welcome $username');
+    final AsyncValue<String?> data = ref.watch(usernameProvider);
+    return switch (data) {
+      AsyncData(value: final username) => Text('Welcome $username'),
+      AsyncError() => Text('Error: ${data.error}'),
+      _ => const CircularProgressIndicator(),
+    };
   }
 }

@@ -11,6 +11,7 @@ class SignUpForm extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final GlobalKey<FormState> signUpForm = GlobalKey<FormState>();
+    final TextEditingController usernameController = useTextEditingController();
     final TextEditingController emailController = useTextEditingController();
     final TextEditingController passwordController = useTextEditingController();
 
@@ -18,6 +19,8 @@ class SignUpForm extends HookConsumerWidget {
       key: signUpForm,
       child: Column(
         children: [
+          SignUpUsernameField(controller: usernameController),
+          const SizedBox(height: 24.0),
           SignUpEmailField(controller: emailController),
           const SizedBox(height: 24.0),
           SignUpPasswordField(controller: passwordController),
@@ -28,6 +31,7 @@ class SignUpForm extends HookConsumerWidget {
                 ref
                     .read(authenticationControllerProvider.notifier)
                     .signUpWithEmailAndPassword(
+                  username: usernameController.text,
                   email: emailController.text,
                   password: passwordController.text,
                 );

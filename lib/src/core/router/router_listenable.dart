@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_devcamp_firebase/src/feature/authentication/authentication.dart';
 import 'package:flutter_devcamp_firebase/src/feature/home/home.dart';
 import 'package:flutter_devcamp_firebase/src/feature/sign_in/sign_in.dart';
+import 'package:flutter_devcamp_firebase/src/feature/sign_up/sign_up.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-
-import '../../feature/sign_up/presentation/page/sign_up_page.dart';
 
 part '../../../_gen/src/core/router/router_listenable.g.dart';
 
@@ -21,22 +20,20 @@ class RouterListenable extends _$RouterListenable implements Listenable {
     });
   }
 
-  Future<String?> redirect(BuildContext context, GoRouterState state) async {
+  String? redirect(BuildContext context, GoRouterState state) {
    final authState = ref.watch(authenticationControllerProvider);
 
     if (authState.isLoading || authState.hasError) return null;
 
     final bool isAuth = authState.valueOrNull != null;
 
-    print('isAuth $isAuth');
-
     if(state.matchedLocation == SignInPage.routeLocation) {
       return isAuth ? HomePage.routeLocation : null;
     }
 
-   if(state.matchedLocation == SignUpPage.routeLocation) {
-     return isAuth ? HomePage.routeLocation : SignUpPage.routeLocation;
-   }
+    if(state.matchedLocation == SignUpPage.routeLocation) {
+      return null;
+    }
 
    return isAuth ? null : SignInPage.routeLocation;
   }

@@ -5,7 +5,10 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 class SignUpPasswordField extends HookWidget {
   final TextEditingController controller;
 
-  const SignUpPasswordField({super.key, required this.controller});
+  const SignUpPasswordField({
+    super.key,
+    required this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {

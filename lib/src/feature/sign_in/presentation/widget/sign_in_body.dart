@@ -11,8 +11,6 @@ class SignInBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: [
-        SignInTitle(),
-        SizedBox(height: 24.0),
         SignInLogo(),
         SizedBox(height: 24.0),
         SignInForm(),
