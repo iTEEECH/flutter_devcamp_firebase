@@ -84,6 +84,9 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
   @override
   Future<void> signOut() async {
     try {
+      final SharedPreferences sharedPreferences =
+      await this.sharedPreferences;
+      await sharedPreferences.clear();
       await ref.read(authenticationRemoteProvider).signOut();
     } catch (_) {
       rethrow;

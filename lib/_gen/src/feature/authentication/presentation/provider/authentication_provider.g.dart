@@ -6,7 +6,7 @@ part of '../../../../../../src/feature/authentication/presentation/provider/auth
 // RiverpodGenerator
 // **************************************************************************
 
-String _$usernameHash() => r'45afa644430ffa2712824ae82a1f40bb1394687e';
+String _$usernameHash() => r'0e569f5463103f872318cd1e9ff9d88481f4dad9';
 
 /// See also [username].
 @ProviderFor(username)

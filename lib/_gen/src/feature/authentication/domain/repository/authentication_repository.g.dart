@@ -7,7 +7,7 @@ part of '../../../../../../src/feature/authentication/domain/repository/authenti
 // **************************************************************************
 
 String _$authenticationRepositoryHash() =>
-    r'4490f1f5c6ea788cc6b79849980e4b5628dadb43';
+    r'e39ad58514f7fc6199ac1b28a52a64282f6d3164';
 
 /// See also [authenticationRepository].
 @ProviderFor(authenticationRepository)
