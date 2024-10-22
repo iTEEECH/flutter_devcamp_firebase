@@ -8,10 +8,11 @@ class HomeWelcome extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AsyncValue<String?> data = ref.watch(usernameProvider);
+    print(data.valueOrNull);
     return switch (data) {
       AsyncData(value: final username) => Text('Welcome $username'),
       AsyncError() => Text('Error: ${data.error}'),
-      _ => const CircularProgressIndicator(),
+      _ => const CircularProgressIndicator.adaptive(),
     };
   }
 }

@@ -5,5 +5,6 @@ part '../../../../../_gen/src/feature/authentication/presentation/provider/authe
 
 @riverpod
 Future<String?> username(UsernameRef ref) {
+  Future.delayed(const Duration(seconds: 5));
   return ref.watch(authenticationRepositoryProvider).fetchUsername();
 }

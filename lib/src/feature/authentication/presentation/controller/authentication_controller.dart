@@ -55,9 +55,8 @@ class AuthenticationController extends _$AuthenticationController {
   }
 
   Future<void> signOut() async {
-    state = const AsyncLoading();
     try {
-      await ref.read(authenticationRepositoryProvider).signOut();
+      await ref.read(firebaseAuthProvider).signOut();
     } on FirebaseAuthException catch (error, stackTrace) {
       state = AsyncError('${error.message}', stackTrace);
     } catch (error, stackTrace) {

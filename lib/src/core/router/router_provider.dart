@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_devcamp_firebase/src/core/router/router_listenable.dart';
+import 'package:flutter_devcamp_firebase/src/feature/authentication/presentation/controller/authentication_controller.dart';
 import 'package:flutter_devcamp_firebase/src/feature/sign_up/presentation/page/sign_up_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -10,15 +10,29 @@ part '../../../_gen/src/core/router/router_provider.g.dart';
 
 @riverpod
 Raw<GoRouter> router(RouterRef ref) {
-  final navigatorKey = GlobalKey<NavigatorState>();
+  final navigatorKey = GlobalKey<NavigatorState>(debugLabel: 'Router');
 
-  final redirectNotifier = ref.watch(routerListenableProvider.notifier);
+  final authState = ref.watch(authenticationControllerProvider);
 
   final GoRouter router = GoRouter(
-    initialLocation: '/sign_in',
+    initialLocation: '/',
     navigatorKey: navigatorKey,
-    redirect: redirectNotifier.redirect,
-    refreshListenable: redirectNotifier,
+    redirect: (BuildContext context, GoRouterState state) {
+
+      if (authState.isLoading || authState.hasError) return null;
+
+      final isAuthenticated = authState.valueOrNull != null;
+
+      if(state.matchedLocation == SignInPage.routeLocation) {
+        isAuthenticated ? HomePage.routeLocation : null;
+      }
+
+      if(state.matchedLocation == SignUpPage.routeLocation) {
+        isAuthenticated ? HomePage.routeLocation : null;
+      }
+
+      return isAuthenticated ? null :  SignInPage.routeLocation;
+    },
     routes: <RouteBase>[
       GoRoute(
         path: HomePage.routeLocation,

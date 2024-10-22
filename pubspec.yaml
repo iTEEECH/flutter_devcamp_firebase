@@ -32,7 +32,8 @@ dependencies:
   hooks_riverpod: 2.5.4
   # https://pub.dev/packages/riverpod_annotation
   riverpod_annotation: 2.5.3
-
+  # https://pub.dev/packages/shared_preferences
+  shared_preferences: 2.3.2
 
 dev_dependencies:
   flutter_test:
